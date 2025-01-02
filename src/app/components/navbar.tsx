@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { useState } from "react";
 import Home from "../page";
@@ -10,7 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-500 text-white shadow-lg">
+    <nav className="bg-rose-300 text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -25,18 +24,23 @@ export default function Navbar() {
           {/* Menu for larger screens */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
+            <Link href="/">
+                <li className="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-200 transition">
+                  Home
+                </li>
+              </Link>
               <Link href="/about">
-                <li className="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition">
+                <li className="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-200 transition">
                   About
                 </li>
               </Link>
               <Link href="/posts">
-                <li className="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition">
+                <li className="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-200 transition">
                   Posts
                 </li>
               </Link>
               <Link href="/contact">
-                <li className="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition">
+                <li className="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-200 transition">
                   Contact
                 </li>
               </Link>
@@ -44,7 +48,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden">
+          <div className="flex items-start md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
