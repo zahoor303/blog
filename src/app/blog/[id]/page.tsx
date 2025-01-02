@@ -52,6 +52,12 @@ export default function Home({params}:{params:{id:string, } }) {
     },
   ];
 
+
+
+  const filteredPosts = params?.id
+    ? posts.filter((post) => post.id.toString() === params.id)
+    : posts;
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50 text-gray-800 p-6">
        <header className="text-center mb-12">
