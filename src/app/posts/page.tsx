@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import CommentSection from "@/app/components/CommentSection";
-import Navbar from "@/app/components/navbar";
-
+import Navbar from "../components/navbar";
 export default function Home() {
   const posts = [
     {
@@ -55,9 +54,10 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50 text-gray-800 p-6">
-       <header className="text-center mb-12">
-        <h1 className="text-5xl font-extrabold text-blue-600 drop-shadow-md tracking-wide">
+   <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50 text-gray-800 p-6">
+    <Navbar/>
+  <header className="text-center mb-12">
+        <h1 className="text-5xl font-extrabold text-blue-900 drop-shadow-md tracking-wide">
           Welcome to the Food Blog
         </h1>
         <p className="text-lg text-gray-700 mt-4">
@@ -77,8 +77,8 @@ export default function Home() {
               className="w-full h-64 object-cover"
             />
             <div className="p-6">
-              <Link href={`/Data/posts${post.id}`}>
-                <li className="text-2xl font-bold text-blue-600 hover:text-blue-800 transition">
+              <Link href={`/blog/id${post.id}`}>
+                <li className="text-2xl font-bold text-indigo-900 hover:text-blue-800 transition">
                   {post.title}
                 </li>
               </Link>
